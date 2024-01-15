@@ -34,6 +34,18 @@ class ViewController: UIViewController {
     }
 
     @IBAction func choiceMade(_ sender: UIButton) {
+        let buttonTitle = sender.titleLabel?.text
+        
+        if buttonTitle == Stories[0].choice1{
+            storyLabel.text = Stories[1].title
+            choice1Button.setTitle(Stories[1].choice1, for: .normal)
+            choice2Button.setTitle(Stories[1].choice2, for: .normal)
+        }
+        else if buttonTitle == Stories[0].choice2{
+            storyLabel.text = Stories[2].title
+            choice1Button.setTitle(Stories[2].choice1, for: .normal)
+            choice2Button.setTitle(Stories[2].choice2, for: .normal)
+        }
     }
     
 }
