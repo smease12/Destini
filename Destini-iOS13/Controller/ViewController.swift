@@ -28,24 +28,24 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        storyLabel.text = Stories[0].title
-        choice1Button.setTitle(Stories[0].choice1, for: .normal)
-        choice2Button.setTitle(Stories[0].choice2, for: .normal)
+        updateUI(storyIndex: 0)
     }
 
     @IBAction func choiceMade(_ sender: UIButton) {
         let buttonTitle = sender.titleLabel?.text
         
         if buttonTitle == Stories[0].choice1{
-            storyLabel.text = Stories[1].title
-            choice1Button.setTitle(Stories[1].choice1, for: .normal)
-            choice2Button.setTitle(Stories[1].choice2, for: .normal)
+            updateUI(storyIndex: 1)
         }
         else if buttonTitle == Stories[0].choice2{
-            storyLabel.text = Stories[2].title
-            choice1Button.setTitle(Stories[2].choice1, for: .normal)
-            choice2Button.setTitle(Stories[2].choice2, for: .normal)
+            updateUI(storyIndex: 2)
         }
+    }
+    
+    func updateUI(storyIndex: Int){
+        storyLabel.text = Stories[storyIndex].title
+        choice1Button.setTitle(Stories[storyIndex].choice1, for: .normal)
+        choice2Button.setTitle(Stories[storyIndex].choice2, for: .normal)
     }
     
 }
